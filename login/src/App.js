@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import SignUp from "./components/Logins/SignUp";
+import Login from "./components/Logins/Login";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 
 class App extends Component {
@@ -22,9 +24,12 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <SignUp />
-      </div>
+      <Router>
+        <div className="App">
+          <Route exact path="/" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
+        </div>
+      </Router>
     );
   }
 }
